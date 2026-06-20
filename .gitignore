@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# personal local files
+instrutions.md
+.agents
+.codex
