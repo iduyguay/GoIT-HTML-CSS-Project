@@ -1,0 +1,74 @@
+<section class="sign-up section">
+  <div class="container">
+    <div class="sign-up-wrapper">
+      <div class="sign-up-content">
+        <h2 class="sign-up-title">Sign <span>Up</span></h2>
+        <p class="sign-up-text">
+          Please use the form below to contact us. Enter your name, email, and
+          message and we'll get back to you shortly.
+        </p>
+
+        <form class="sign-up-form">
+          <label class="sign-up-label">
+            <span class="visually-hidden">Name</span>
+            <input
+              class="sign-up-input"
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              pattern="[A-Za-zА-Яа-яЁёІіЇїЄєҐґ' -]{2,}"
+              required
+            />
+          </label>
+
+          <label class="sign-up-label">
+            <span class="visually-hidden">Email</span>
+            <input
+              class="sign-up-input"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+              required
+            />
+          </label>
+
+          <label class="sign-up-label">
+            <span class="visually-hidden">Message</span>
+            <textarea class="sign-up-textarea" name="message" placeholder="Message" required></textarea>
+          </label>
+
+          <button class="sign-up-button" type="submit">Send</button>
+        </form>
+
+        <p class="sign-up-note">
+          By clicking on “Send” button, you agree to our <a class="sign-up-link" href="#">Privacy Policy</a>, and allow Promodo to use this information for marketing purposes.
+        </p>
+      </div>
+
+      <div class="sign-up-visual">
+        <div class="sign-up-camera-wrap">
+          <img
+            class="sign-up-camera"
+            src="./images/sign-up/lens@1x.webp"
+            srcset="./images/sign-up/lens@1x.webp 1x, ./images/sign-up/lens@2x.webp 2x"
+            alt="Camera lens"
+            width="154"
+            height="163"
+          />
+        </div>
+
+        <div class="sign-up-camera-panel">
+          <img
+            class="sign-up-camera-main"
+            src="./images/sign-up/camera@1x.webp"
+            srcset="./images/sign-up/camera@1x.webp 1x, ./images/sign-up/camera@2x.webp 2x"
+            alt="Professional camera"
+            width="240"
+            height="296"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

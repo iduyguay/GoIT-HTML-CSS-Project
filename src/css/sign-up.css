@@ -1,0 +1,260 @@
+.sign-up {
+  margin: 80px 0;
+  background-color: var(--background-color);
+}
+
+.sign-up-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up-content {
+  width: 100%;
+}
+
+.sign-up-title {
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 1.14;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--primary-text-color);
+}
+
+.sign-up-title span {
+  color: var(--accent-color);
+}
+
+.sign-up-text {
+  max-width: 295px;
+  margin: 0 0 41px;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--primary-text-color);
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.sign-up-label {
+  display: block;
+}
+
+.sign-up .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.sign-up-input,
+.sign-up-textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  outline: transparent;
+  background-color: transparent;
+  color: var(--primary-text-color);
+  font-family: var(--main-font);
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  transition: border-color 250ms ease;
+}
+
+.sign-up-input {
+  height: 46px;
+  padding: 0 18px;
+}
+
+.sign-up-textarea {
+  height: 112px;
+  padding: 14px 18px;
+  resize: none;
+}
+
+.sign-up-input::placeholder,
+.sign-up-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sign-up-input:hover,
+.sign-up-input:focus,
+.sign-up-textarea:hover,
+.sign-up-textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.sign-up-button {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 32px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #121212;
+  font-family: var(--main-font);
+  font-size: 14px;
+  line-height: 1.29;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.sign-up-button:hover,
+.sign-up-button:focus {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+
+.sign-up-note {
+  max-width: 335px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.33;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sign-up-link {
+  color: currentColor;
+  text-decoration: underline;
+}
+
+.sign-up-visual {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .sign-up {
+    margin: 100px 0;
+  }
+
+  .sign-up-content {
+    max-width: 480px;
+  }
+
+  .sign-up-title {
+    font-size: 48px;
+    line-height: 1.12;
+  }
+
+  .sign-up-text {
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .sign-up-form {
+    gap: 14px;
+  }
+
+  .sign-up-input {
+    height: 60px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .sign-up-textarea {
+    height: 120px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .sign-up-button {
+    min-height: 60px;
+    margin-top: 26px;
+    font-size: 18px;
+    line-height: 1.56;
+  }
+
+  .sign-up-note {
+    max-width: 480px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .sign-up {
+    margin: 150px 0;
+  }
+
+  .sign-up-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+  }
+
+  .sign-up-content {
+    flex: 0 0 480px;
+  }
+
+  .sign-up-visual {
+    position: relative;
+    display: block;
+    width: 582px;
+    height: 540px;
+    flex-shrink: 0;
+  }
+
+  .sign-up-camera-panel {
+    position: absolute;
+    top: 0;
+    left: 242px;
+    width: 340px;
+    height: 540px;
+    border-radius: 1000px;
+    background-color: #1D1D1D;
+  }
+
+  .sign-up-camera-main {
+    position: absolute;
+    top: 156px;
+    left: 50px;
+    width: 240px;
+    height: 296px;
+    object-fit: contain;
+  }
+
+  .sign-up-camera-wrap {
+    position: absolute;
+    left: 42px;
+    bottom: 0;
+    width: 180px;
+    height: 288px;
+    border-radius: 1000px;
+    background-color: var(--accent-color);
+    overflow: hidden;
+  }
+
+  .sign-up-camera {
+    position: absolute;
+    left: 13px;
+    top: 62px;
+    width: 154px;
+    height: 163px;
+    object-fit: contain;
+    filter: drop-shadow(-35.56px 17.78px 25.44px rgba(0, 0, 0, 0.40));
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .sign-up-wrapper {
+    gap: 150px;
+  }
+
+  .sign-up-visual {
+    width: 582px;
+  }
+}
