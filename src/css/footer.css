@@ -1,31 +1,16 @@
-@import url('./base.css');
-@import url('./reset.css');
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .footer {
   background-color: #121212;
   background-image: url('../img/Graphic.png');
-  padding: 40px 20px;
   background-size: cover;
   background-position: center;
+  padding: 40px 0;
   color: #fff;
 }
 
 .footer .container {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
 }
 
 .footer-logo {
@@ -35,8 +20,11 @@
   gap: 16px;
 }
 
-.contacts-list {
+.contacts-address {
   font-style: normal;
+}
+
+.contacts-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -77,7 +65,7 @@
   border: none;
   outline: none;
   padding: 0 15px;
-  border-radius: 12px;
+  border-radius: 20px; /* Figma stiline göre kapsül yuvarlatma */
   font-size: 14px;
 }
 
@@ -89,30 +77,42 @@
   flex-shrink: 0;
   height: 60px;
   padding: 0 25px;
-  background-color: rgba(29, 29, 29, 1);
+  background-color: rgb(29, 29, 29);
   color: #fff;
-  border: none;
-  border-radius: 12px;
+  border: 1px solid #333;
+  border-radius: 20px; /* Input ile köşe yuvarlatma eşitliği */
   font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.submit-btn:hover {
+  background-color: #fff;
+  color: #121212;
 }
 
 .text {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.33;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-bottom {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
-  width: 100%;
+  flex-direction: column;
+  gap: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px 0;
+  padding-top: 20px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media screen and (min-width: 375px) {
@@ -140,19 +140,22 @@
     flex-direction: row;
     gap: 30px;
   }
+
   .nav-list li a {
     white-space: nowrap;
-  }
-  .footer-bottom {
-    max-width: 720px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
   }
 
   .footer-bottom {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    max-width: 720px;
+    margin: 40px auto 0 auto;
+  }
+
+  .footer-bottom-links {
+    flex-direction: row;
+    gap: 20px;
   }
 }
 
@@ -165,15 +168,8 @@
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 60px;
-    padding-right: 60px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 50px;
   }
+
   .footer-links-wrapper {
     gap: 100px;
   }
@@ -184,17 +180,7 @@
 
   .footer-bottom {
     max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  .footer-bottom {
-    padding: 30px 60px 0 60px;
-    flex-direction: row;
-    justify-content: space-between;
+    margin: 60px auto 0 auto;
   }
 }
 
@@ -202,7 +188,5 @@
   .footer .container,
   .footer-bottom {
     max-width: 1440px;
-    padding-left: 80px;
-    padding-right: 80px;
   }
 }
