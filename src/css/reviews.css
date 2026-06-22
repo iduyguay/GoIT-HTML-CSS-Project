@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap');
+.reviews{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 40px;
+  background-color: rgba(18, 18, 18, 1);
+  min-height: 340px;
+}
+.reviews h2 {
+  color : white;
+  font-family: "DM Sans", "Roboto", "Arial", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: calc(32 / 28);
+  letter-spacing: -0.04rem;
+  margin-left: 20px;
+}
+.reviewsList{
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap : 20px;
+  margin : 0 20px;
+  max-height: 261px;
+}
+.reviewCard{
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.reviewsUser{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap : 4px;
+}
+.reviewsName{
+  color : rgb(255, 255, 255);
+  font-family: "DM Sans", "Roboto", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: calc(24 / 20);
+}
+.reviewsJob{
+  color : rgba(255, 255, 255, 0.5);
+  font-family: "DM Sans", "Roboto", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: calc(16 / 12);
+}
+.reviewsComment{
+  color : rgb(255, 255, 255);
+  font-family: "DM Sans", "Roboto", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.02rem;
+}
+.ratingImg{
+  width: 16px;
+  height: 16px;
+  color : rgba(190, 166, 158, 1);
+  display: block;
+}
+.unFilledSvg{
+  color : rgba(255, 255, 255, 0.2);
+}
+.reviewInfo{
+  display: flex;
+  column-gap: 10px;
+  flex-wrap: wrap;
+}
+.reviewsRate{
+  flex-basis: 100%;
+  padding-left: 66px;
+  display: flex;
+  gap : 4px;
+}
+.reviewsRateItem{
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reviewImg{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+@media screen and (min-width : 768px) {
+  .reviews{
+    row-gap: 50px;
+  }
+  .reviewsRateItem {
+    width: 20px;
+    height: 20px;
+    }
+  .ratingImg {
+    width: 20px;
+    height: 20px;
+  }
+  .reviewsList{
+    max-height: 188px;
+  }
+  .reviews h2 {
+    margin-left: 32px;
+  }
+  .reviewsList{
+    margin : 0 64px
+  }
+  .reviewInfo{
+    flex-wrap: nowrap;
+  }
+  .reviewsRate{
+    padding: 0;
+    flex-basis: auto;
+    margin-left: auto;
+  }
+  .reviews h2 {
+    font-size: 48px;
+    line-height: calc(54 / 48);
+  }
+  .reviewsName {
+    font-size: 20px;
+    line-height: calc(28 / 20);
+  }
+  .reviewsJob {
+    font-size: 14px;
+    line-height: calc(18 / 14);
+  }
+  .reviewsComment {
+    font-size: 16px;
+    line-height: calc(20 / 16);
+  }
+}
+@media screen and (min-width : 1158px) {
+  .reviews h2{
+    margin-left: 100px;
+  }
+  .reviewsList{
+    flex-direction: row;
+    gap : 20px;
+    margin : 0 100px
+  }
+}
