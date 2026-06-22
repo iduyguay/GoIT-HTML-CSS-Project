@@ -1,17 +1,19 @@
 <link rel="stylesheet" href="../css/footer.css" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <footer class="footer">
   <div class="container">
-    <div class="block footer-logo">
+    <div class="footer-logo">
       <h2>Focus.Frame</h2>
       <ul class="contacts-list">
         <li><a href="tel:+380665438912">+38 066 543 8912</a></li>
-        <li><p>1678 S. Pioneer Road Salt Lake City UT 84104</p></li>
+        <address class="text">
+          1678 S. Pioneer Road Salt Lake City UT 84104
+        </address>
       </ul>
     </div>
 
     <div class="footer-links-wrapper">
-      <div class="block footer-socials">
+      <div class="footer-socials">
         <ul class="socials-list">
           <li>
             <a
@@ -40,8 +42,8 @@
         </ul>
       </div>
 
-      <nav class="block">
-        <ul class="contacts-list">
+      <nav class="footer-nav">
+        <ul class="nav-list">
           <li><a href="#about-us">About Us</a></li>
           <li><a href="#our-courses">Our Courses</a></li>
           <li><a href="#our-mentors">Our Mentors</a></li>
@@ -51,7 +53,7 @@
       </nav>
     </div>
 
-    <div class="block">
+    <div class="subscribe">
       <form class="footer-form" autocomplete="off">
         <label for="footer-email" class="visually-hidden"
           >Enter your email</label
@@ -62,17 +64,22 @@
           class="input"
           placeholder="Enter your email"
           required
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         />
         <button type="submit" class="submit-btn">Go</button>
       </form>
     </div>
+  </div>
 
-    <div class="footer-bottom">
-      <a href="#privacy-policy" class="text"
-        >Privacy Policy Public Offering Agreement</a
-      >
-      <p class="text">2024 Focus Frame &copy; All rights reserved</p>
-    </div>
+  <div class="footer-bottom">
+    <ul>
+      <li>
+        <a href="#privacy-policy" class="text"
+          >Privacy Policy<br />
+          Public Offering Agreement</a
+        >
+      </li>
+      <li class="text">2024 Focus Frame <br />&copy; All rights reserved</li>
+    </ul>
   </div>
 </footer>

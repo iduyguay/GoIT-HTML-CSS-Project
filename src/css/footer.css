@@ -13,12 +13,6 @@ a {
   color: inherit;
 }
 
-body {
-  font-family: sans-serif;
-  background-color: #111;
-  color: #fff;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -36,60 +30,61 @@ body {
   background-color: #121212;
   background-image: url('../img/Graphic.png');
   padding: 40px 20px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 }
 
 .footer .container {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-}
-
-.block {
-  width: 100%;
+  flex-direction: column; /* Mobilde her şey alt alta */
+  gap: 60px;
 }
 
 .footer-logo {
   display: flex;
   flex-direction: column;
+  width: auto;
   gap: 16px;
+}
+
+/* DÜZELTME: <address> etiketinin eğik (italic) yazılmasını engeller */
+.contacts-list {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-links-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  gap: 20px;
-}
-
-.footer-nav-block,
-.footer-socials-block {
-  flex-basis: 50%;
+  flex-direction: row; /* DÜZELTME: Mobilde taşmayı önlemek için link grupları alt alta */
+  gap: 30px;
 }
 
 .socials-list,
-.contact-list {
+.nav-list {
   display: flex;
   flex-direction: column;
   gap: 14px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
+  text-transform: uppercase; /* Tüm harfleri otomatik olarak büyük harf yapar */
 }
 
 .footer-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Input ve buton yan yana kalabilir */
   align-items: center;
   flex-wrap: nowrap;
-  width: 100%;
   gap: 8px;
 }
 
 .input {
   flex-grow: 1;
   min-width: 0;
+  max-width: 216px;
   height: 60px;
   background-color: #fff;
   color: #000;
@@ -110,7 +105,7 @@ body {
   padding: 0 25px;
   background-color: #1e1e1e;
   color: #fff;
-  border: 1px solid #333;
+  border: none;
   border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
@@ -125,14 +120,13 @@ body {
   line-height: 1.33;
 }
 
-.footer-bottom {
+.footer-bottom ul {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row; /* DÜZELTME: Mobilde alt metinler alt alta */
+  gap: 40px;
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 20px;
+  padding: 40px 0; /* DÜZELTME: Hatalı padding yazımı düzeltildi */
 }
 
 @media screen and (min-width: 375px) {
@@ -143,6 +137,9 @@ body {
   }
 }
 
+/* =========================================================
+   TABLET VE BİLGİSAYAR GÖRÜNÜMÜ (Büyük Ekranlar)
+   ========================================================= */
 @media screen and (min-width: 768px) {
   .footer {
     padding: 60px 0;
@@ -150,25 +147,96 @@ body {
 
   .footer .container {
     max-width: 720px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: baseline;
+    flex-direction: row; /* Büyük ekranda ana bölümler yan yana */
+    align-items: flex-start; /* baseline yerine üst çizgiye hizalamak daha temiz durur */
     justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-links-wrapper {
+    flex-direction: row; /* Büyük ekranda link grupları yan yana */
     gap: 30px;
   }
-
-  .footer .block {
-    width: auto;
-    flex: 1;
+  .nav-list li a {
+    white-space: nowrap; /* Kesinlikle alt satıra geçmeyi engeller, tek satıra zorlar */
   }
-
-  .footer .block:has(.footer-form) {
-    max-width: 300px;
-    flex: none;
-    width: 100%;
-  }
-
   .footer-bottom {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 40px;
+  }
+
+  .footer-bottom ul {
+    flex-direction: row; /* Büyük ekranda telif ve sözleşme yazısı yan yana */
+    justify-content: space-between;
+  }
+}
+/* =========================================================
+   DESKTOP GÖRÜNÜMÜ (1280px ve Üzeri Ekranlar)
+   ========================================================= */
+@media screen and (min-width: 1280px) {
+  .footer {
+    padding: 80px 0; /* Masaüstünde yukarıdan aşağıya daha geniş, ferah bir alan */
+  }
+
+  .footer .container {
+    /* 1280px genişliği kaplar, daha büyük ekranlarda (örn: 1920px) ortalı kalır ve kopukluğu önler */
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 60px; /* Kenarlardan şık bir iç boşluk */
+    padding-right: 60px;
+
+    /* Elemanları yan yana diz ve aralarındaki boşluğu dengeli dağıt */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* Elemanlar birbirine çok yaklaşmasın diye güvenli mesafe */
+  }
+
+  /* Link gruplarının (Sosyal medya ve Navigasyon) masaüstündeki mesafesi */
+  .footer-links-wrapper {
+    gap: 100px; /* Masaüstünde linkler arası boşluk biraz daha açılarak dolduruluyor */
+  }
+
+  /* Abone ol formunun masaüstünde çok küçük kalmaması için genişlik ayarı */
+  .subscribe {
+    min-width: 360px; /* Form alanının genişliğini sabitleyerek sağ tarafı dolu gösteriyoruz */
+  }
+
+  /* Alt Bilgi Alanı (Privacy & Copyright) */
+  .footer-bottom {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px; /* Üst kısımla olan mesafeyi artırdık */
+    padding-left: 60px; /* DÜZELTME: Yukarıdaki 60px ile soldan kusursuz eşitlendi */
+    padding-right: 60px; /* Sağdan da eşitlendi */
+  }
+
+  .footer-bottom ul {
+    padding: 30px 60px 0 60px; /* Yukarıdaki container ile birebir aynı hizada durması için */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* =========================================================
+   İSTEK ÜZERİNE: ULTRA GENİŞ EKRANLAR (1440px ve Üzeri)
+   Eğer tasarımın 1440px ekranlarda daha da genişlemesini isterseniz 
+   sadece sınırları güncelliyoruz.
+   ========================================================= */
+@media screen and (min-width: 1440px) {
+  .footer .container,
+  .footer-bottom {
+    max-width: 1440px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .footer-bottom ul {
+    padding: 30px 0 0 0; /* İç padding her zaman sıfır kalmalı */
   }
 }
