@@ -37,7 +37,7 @@ a {
 
 .footer .container {
   display: flex;
-  flex-direction: column; /* Mobilde her şey alt alta */
+  flex-direction: column;
   gap: 60px;
 }
 
@@ -48,7 +48,6 @@ a {
   gap: 16px;
 }
 
-/* DÜZELTME: <address> etiketinin eğik (italic) yazılmasını engeller */
 .contacts-list {
   font-style: normal;
   display: flex;
@@ -58,7 +57,7 @@ a {
 
 .footer-links-wrapper {
   display: flex;
-  flex-direction: row; /* DÜZELTME: Mobilde taşmayı önlemek için link grupları alt alta */
+  flex-direction: row;
   gap: 30px;
 }
 
@@ -70,12 +69,12 @@ a {
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
-  text-transform: uppercase; /* Tüm harfleri otomatik olarak büyük harf yapar */
+  text-transform: uppercase;
 }
 
 .footer-form {
   display: flex;
-  flex-direction: row; /* Input ve buton yan yana kalabilir */
+  flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
   gap: 8px;
@@ -91,7 +90,7 @@ a {
   border: none;
   outline: none;
   padding: 0 15px;
-  border-radius: 20px;
+  border-radius: 12px;
   font-size: 14px;
 }
 
@@ -122,11 +121,11 @@ a {
 
 .footer-bottom ul {
   display: flex;
-  flex-direction: row; /* DÜZELTME: Mobilde alt metinler alt alta */
+  flex-direction: row;
   gap: 40px;
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px 0; /* DÜZELTME: Hatalı padding yazımı düzeltildi */
+  padding: 40px 0;
 }
 
 @media screen and (min-width: 375px) {
@@ -137,9 +136,6 @@ a {
   }
 }
 
-/* =========================================================
-   TABLET VE BİLGİSAYAR GÖRÜNÜMÜ (Büyük Ekranlar)
-   ========================================================= */
 @media screen and (min-width: 768px) {
   .footer {
     padding: 60px 0;
@@ -147,18 +143,18 @@ a {
 
   .footer .container {
     max-width: 720px;
-    flex-direction: row; /* Büyük ekranda ana bölümler yan yana */
-    align-items: flex-start; /* baseline yerine üst çizgiye hizalamak daha temiz durur */
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
   }
 
   .footer-links-wrapper {
-    flex-direction: row; /* Büyük ekranda link grupları yan yana */
+    flex-direction: row;
     gap: 30px;
   }
   .nav-list li a {
-    white-space: nowrap; /* Kesinlikle alt satıra geçmeyi engeller, tek satıra zorlar */
+    white-space: nowrap;
   }
   .footer-bottom {
     max-width: 720px;
@@ -168,66 +164,53 @@ a {
   }
 
   .footer-bottom ul {
-    flex-direction: row; /* Büyük ekranda telif ve sözleşme yazısı yan yana */
+    flex-direction: row;
     justify-content: space-between;
   }
 }
-/* =========================================================
-   DESKTOP GÖRÜNÜMÜ (1280px ve Üzeri Ekranlar)
-   ========================================================= */
+
 @media screen and (min-width: 1280px) {
   .footer {
-    padding: 80px 0; /* Masaüstünde yukarıdan aşağıya daha geniş, ferah bir alan */
+    padding: 80px 0;
   }
 
   .footer .container {
-    /* 1280px genişliği kaplar, daha büyük ekranlarda (örn: 1920px) ortalı kalır ve kopukluğu önler */
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 60px; /* Kenarlardan şık bir iç boşluk */
+    padding-left: 60px;
     padding-right: 60px;
 
-    /* Elemanları yan yana diz ve aralarındaki boşluğu dengeli dağıt */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 50px; /* Elemanlar birbirine çok yaklaşmasın diye güvenli mesafe */
+    gap: 50px;
   }
-
-  /* Link gruplarının (Sosyal medya ve Navigasyon) masaüstündeki mesafesi */
   .footer-links-wrapper {
-    gap: 100px; /* Masaüstünde linkler arası boşluk biraz daha açılarak dolduruluyor */
+    gap: 100px;
   }
 
-  /* Abone ol formunun masaüstünde çok küçük kalmaması için genişlik ayarı */
   .subscribe {
-    min-width: 360px; /* Form alanının genişliğini sabitleyerek sağ tarafı dolu gösteriyoruz */
+    min-width: 360px;
   }
 
-  /* Alt Bilgi Alanı (Privacy & Copyright) */
   .footer-bottom {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px; /* Üst kısımla olan mesafeyi artırdık */
-    padding-left: 60px; /* DÜZELTME: Yukarıdaki 60px ile soldan kusursuz eşitlendi */
-    padding-right: 60px; /* Sağdan da eşitlendi */
+    margin-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 
   .footer-bottom ul {
-    padding: 30px 60px 0 60px; /* Yukarıdaki container ile birebir aynı hizada durması için */
+    padding: 30px 60px 0 60px;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-/* =========================================================
-   İSTEK ÜZERİNE: ULTRA GENİŞ EKRANLAR (1440px ve Üzeri)
-   Eğer tasarımın 1440px ekranlarda daha da genişlemesini isterseniz 
-   sadece sınırları güncelliyoruz.
-   ========================================================= */
 @media screen and (min-width: 1440px) {
   .footer .container,
   .footer-bottom {
@@ -237,6 +220,6 @@ a {
   }
 
   .footer-bottom ul {
-    padding: 30px 0 0 0; /* İç padding her zaman sıfır kalmalı */
+    padding: 30px 0 0 0;
   }
 }
