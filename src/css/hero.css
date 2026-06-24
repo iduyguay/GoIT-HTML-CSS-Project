@@ -1,12 +1,12 @@
 .hero {
-  background-color: #1d1d1d;
+  background-color: var(--black-soft);
   border-radius: 30px;
   margin: 20px 20px 0 20px;
   padding: 40px 20px 0 20px;
   overflow: hidden;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -16,31 +16,30 @@
 }
 
 .hero h1 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-weight: 500;
   font-size: 40px;
   line-height: 44px;
   letter-spacing: -0.04em;
-  color: #ffffff;
+  color: var(--primary-text-color);
   margin: 0 0 20px 0;
 }
 
 .hero h1 .highlight {
   font-weight: 400;
   font-style: italic;
-  color: rgba(190, 166, 158, 1);
+  color: var(--accent-color);
 }
 
 .hero p {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: var(--primary-text-color);
   margin: 0;
   max-width: 100%;
-  word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
@@ -66,7 +65,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 2px solid #1d1d1d;
+  border: 2px solid var(--black-soft);
   object-fit: cover;
 }
 
@@ -75,19 +74,19 @@
 }
 
 .students-link {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #ffffff;
+  color: var(--primary-text-color);
   text-decoration: none;
   display: block;
-  width: 80px;
+  width: auto;
   letter-spacing: -0.04em;
   margin-top: 4px;
 }
 
-.reviews {
+.hero-reviews {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -98,7 +97,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #bea69e;
+  background-color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,20 +116,20 @@
 }
 
 .review-text p:first-child {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  color: #ffffff;
+  color: var(--primary-text-color);
   margin: 0;
 }
 
 .review-text .count {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--main-font);
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  color: #ffffff;
+  color: var(--primary-text-color);
   margin: 0;
 }
 

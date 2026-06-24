@@ -20,7 +20,8 @@
   line-height: 32px;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: var(--primary-text-color);
+  /* Figma: fill #bea69e on all viewports */
+  color: var(--accent-color);
   margin: 0;
 }
 
@@ -41,6 +42,7 @@
   .marquee-content .marquee-text {
     font-size: 40px;
     line-height: 50px;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -54,7 +56,9 @@
   }
 
   .marquee-content .marquee-text {
+    /* Figma desktop: 59px/64px, ls=-1.18 → -0.02em */
     font-size: 59px;
     line-height: 64px;
+    letter-spacing: -0.02em;
   }
 }

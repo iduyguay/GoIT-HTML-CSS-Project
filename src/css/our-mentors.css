@@ -1,14 +1,15 @@
 .our-mentors {
-  margin: 80px 0;
-  padding: 0;
+  padding: 40px 0;
   background-color: var(--background-color);
 }
 
 .our-mentors-title {
   margin-bottom: 40px;
+  font-family: var(--main-font);
   font-size: 28px;
-  line-height: 1.14;
-  font-weight: 600;
+  line-height: 32px;
+  font-weight: 500;
+  /* Figma mobile: ls=-1.12px at 28px = -0.04em */
   letter-spacing: -0.04em;
   color: var(--primary-text-color);
 }
@@ -18,20 +19,39 @@
 }
 
 .our-mentors-list {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 40px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
   list-style: none;
-  justify-items: center;
+}
+
+/* Custom scrollbar matching Figma's dark theme */
+.our-mentors-list::-webkit-scrollbar {
+  height: 6px;
+}
+.our-mentors-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.our-mentors-list::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
 }
 
 .our-mentors-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 0 0 auto;
   width: 185px;
+  scroll-snap-align: center;
   min-height: 240px;
   text-align: center;
 }
@@ -43,11 +63,12 @@
   margin-bottom: 16px;
   border-radius: 50%;
   object-fit: cover;
-  background-color: #121212;
+  background-color: var(--black);
 }
 
 .our-mentors-name {
   margin: 0 0 4px;
+  font-family: var(--main-font);
   font-size: 20px;
   line-height: 1.2;
   font-weight: 500;
@@ -56,14 +77,15 @@
 
 .our-mentors-text {
   margin: 0;
+  font-family: var(--main-font);
   font-size: 12px;
   line-height: 1.33;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
 }
 
 @media only screen and (min-width: 768px) {
   .our-mentors {
-    margin: 100px 0;
+    padding: 50px 0;
   }
 
   .our-mentors-title {
@@ -73,13 +95,16 @@
   }
 
   .our-mentors-list {
+    display: grid;
     grid-template-columns: repeat(2, 185px);
     gap: 40px 100px;
     justify-content: center;
+    overflow-x: visible;
+    padding-bottom: 0;
   }
-
-  .our-mentors-image {
-    margin-bottom: 16px;
+  
+  .our-mentors-list::-webkit-scrollbar {
+    display: none;
   }
 
   .our-mentors-name {
@@ -95,7 +120,7 @@
 
 @media only screen and (min-width: 1280px) {
   .our-mentors {
-    margin: 150px 0;
+    padding: 75px 0;
   }
 
   .our-mentors-title {
@@ -122,11 +147,5 @@
   .our-mentors-text {
     font-size: 14px;
     line-height: 1.29;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .our-mentors-list {
-    gap: 0 100px;
   }
 }

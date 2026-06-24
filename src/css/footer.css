@@ -1,156 +1,269 @@
+/* ============================================================
+   FOOTER — Figma 1280px exact metrics
+   Footer: y=3481, h=331, w=1280
+   Container inner w=1080 (padding 100px each side)
+   
+   Layout (relative to container left edge=0):
+   Logo:             rel_x=0,   rel_y=50, w=123, h=16
+   Contacts list:    rel_x=0,   rel_y=91, w=287, h=46
+   Block (socials+menu): rel_x=427, rel_y=50, w=224, h=170 (HORIZONTAL gap=50)
+     - social networks: w=77, VERTICAL gap=20
+     - menu: w=97, VERTICAL gap=20
+   Email input:      rel_x=786, rel_y=50, w=216, h=60
+   CTA Go button:    rel_x=1018, rel_y=50, w=60, h=60
+   Privacy+Copyright row: rel_y=270
+
+   Gap between Reviews (bottom=3331) and Footer (y=3481) = 150px
+   This is encoded as margin-top: 150px on footer OR padding-top: 150px.
+   We implement as section-level margin-top on footer element.
+   ============================================================ */
+
 .footer {
-  background-color: #121212;
-  background-image: url('../img/Graphic.png');
-  background-size: cover;
-  background-position: center;
-  padding: 40px 0;
-  color: #fff;
+  margin-top: 150px;
+  background-color: var(--black);
+  padding: 50px 0 61px;
+  color: var(--primary-text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative SVG background graphic — Figma node "Graphic" extends beyond footer */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center top;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
+/* ---- Group 1: Logo + contacts ---- */
 .footer-logo {
   display: flex;
   flex-direction: column;
-  width: auto;
   gap: 16px;
+  max-width: 287px;
 }
 
-.contacts-address {
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-logo-link img {
+  display: block;
+  width: 123px;
+  height: auto;
+}
+
+.footer-address {
   font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary-text-color);
 }
 
 .contacts-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary-text-color);
 }
 
+.contacts-list a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 250ms ease;
+}
+
+.contacts-list a:hover,
+.contacts-list a:focus {
+  color: var(--accent-color);
+}
+
+/* ---- Group 2: Socials + Nav links side by side ---- */
+/* Figma: HORIZONTAL itemSpacing=50 between social networks col and menu col */
 .footer-links-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 50px;
 }
 
 .socials-list,
 .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 20px; /* Figma itemSpacing=20 within each column */
   font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  text-transform: uppercase;
+  line-height: 18px;
+  color: var(--primary-text-color);
+}
+
+.socials-list a,
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 250ms ease;
+}
+
+.socials-list a:hover,
+.socials-list a:focus,
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--accent-color);
+}
+
+/* ---- Group 3: Email subscription ---- */
+.footer-subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
 }
 
 .footer-form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: nowrap;
   gap: 8px;
+  width: 100%;
 }
 
-.input {
+/* Figma: input w=216 h=60, white bg */
+.footer-input {
   flex-grow: 1;
   min-width: 0;
-  max-width: 216px;
   height: 60px;
-  background-color: #fff;
-  color: #000;
+  background-color: #ffffff;
+  color: #000000;
   border: none;
   outline: none;
   padding: 0 15px;
-  border-radius: 20px; /* Figma stiline göre kapsül yuvarlatma */
-  font-size: 14px;
+  border-radius: 12px;
+  font-family: var(--main-font);
+  font-size: 16px;
+  line-height: 60px;
 }
 
-.input::placeholder {
+.footer-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
   font-size: 16px;
 }
 
-.submit-btn {
+/* Figma: CTA button w=60 h=60 bg=#1d1d1d */
+.footer-submit-btn {
   flex-shrink: 0;
+  width: 60px;
   height: 60px;
-  padding: 0 25px;
-  background-color: rgb(29, 29, 29);
-  color: #fff;
-  border: 1px solid #333;
-  border-radius: 20px; /* Input ile köşe yuvarlatma eşitliği */
-  font-size: 16px;
+  padding: 0;
+  background-color: var(--black-soft);
+  color: var(--primary-text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-family: var(--main-font);
+  font-size: 20px;
+  line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms ease, color 250ms ease;
+  transition: background-color 250ms ease, border-color 250ms ease;
 }
 
-.submit-btn:hover {
-  background-color: #fff;
-  color: #121212;
+.footer-submit-btn:hover,
+.footer-submit-btn:focus {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
-.text {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.33;
-  color: rgba(255, 255, 255, 0.6);
-}
-
+/* ---- Bottom row: Privacy + Copyright ---- */
 .footer-bottom {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 12px;
+  border-top: 1px solid var(--border-color);
   padding-top: 20px;
 }
 
 .footer-bottom-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
-@media screen and (min-width: 375px) {
-  .footer .container {
-    max-width: 345px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.footer-text {
+  font-family: var(--main-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: var(--text-muted);
+  text-decoration: none;
 }
 
+a.footer-text:hover,
+a.footer-text:focus {
+  color: var(--accent-color);
+}
+
+/* ====== TABLET (768px) ====== */
 @media screen and (min-width: 768px) {
   .footer {
-    padding: 60px 0;
+    margin-top: 100px;
+    padding: 60px 0 40px;
   }
 
-  .footer .container {
-    max-width: 720px;
+  .footer-top {
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 0;
+  }
+
+  .footer-logo {
+    flex-shrink: 0;
+    width: 152px;
   }
 
   .footer-links-wrapper {
-    flex-direction: row;
-    gap: 30px;
+    flex-shrink: 0;
   }
 
-  .nav-list li a {
-    white-space: nowrap;
+  .footer-subscribe {
+    flex-shrink: 0;
+    width: 284px;
   }
 
   .footer-bottom {
+    flex-basis: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 720px;
-    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    margin-top: 10px;
   }
 
   .footer-bottom-links {
@@ -159,34 +272,56 @@
   }
 }
 
+/* ====== DESKTOP (1280px) ====== */
+/* Figma: all groups in one horizontal row */
+/* Logo group left, block (socials+nav) center, subscribe right */
 @media screen and (min-width: 1280px) {
   .footer {
-    padding: 80px 0;
+    margin-top: 150px;
+    padding: 50px 0 61px;
   }
 
-  .footer .container {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+  .footer-top {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
   }
 
+  /* Logo group: left, rel_x=0 */
+  .footer-logo {
+    flex-shrink: 0;
+    width: 287px;
+    gap: 25px;
+  }
+
+  /* Navigation block: center, rel_x=427, HORIZONTAL gap=50 between sub-cols */
   .footer-links-wrapper {
-    gap: 100px;
+    flex-shrink: 0;
+    gap: 50px;
+    align-items: flex-start;
+    /* margin-left is handled by space-between */
   }
 
-  .subscribe {
-    min-width: 360px;
+  /* Subscribe: right, w=276 (216+60 input+button) */
+  .footer-subscribe {
+    flex-shrink: 0;
+    width: 284px;
   }
 
   .footer-bottom {
-    max-width: 1280px;
-    margin: 60px auto 0 auto;
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 129px; /* Figma: bottom row at rel_y=270, logo at rel_y=50, so bottom is at 270-50-gap */
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
   }
-}
 
-@media screen and (min-width: 1440px) {
-  .footer .container,
-  .footer-bottom {
-    max-width: 1440px;
+  .footer-bottom-links {
+    flex-direction: row;
+    gap: 20px;
   }
 }

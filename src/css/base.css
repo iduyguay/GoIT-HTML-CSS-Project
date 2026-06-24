@@ -1,277 +1,51 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES
+   ========================================================================== */
 :root {
-  --primary-text-color: #ffffff;
-  --background-color: #1d1d1d;
+  /* Palette */
+  --black: #121212;
+  --black-soft: #1d1d1d;
+  --black-gradient: linear-gradient(180deg, #060707 0%, #1d1d1d 100%);
+  --brown: #bea69e;
   --accent-color: #bea69e;
+  --white: #ffffff;
 
+  /* Semantic aliases */
+  --background-color: #121212;
+  --primary-text-color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.2);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --grid-color: rgba(255, 255, 255, 0.05);
+
+  /* Typography */
   --main-font: 'DM Sans', sans-serif;
 }
 
+/* ==========================================================================
+   GLOBAL BASE STYLES
+   ========================================================================== */
 body {
-  font-family: var(--main-font);
-  font-size: 14px;
-  line-height: 1.28;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-
-  color: var(--primary-text-color);
   background-color: var(--background-color);
-
+  color: var(--primary-text-color);
+  font-family: var(--main-font);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-=======
-.hero {
-  background-color: var(--black-soft);
-  border-radius: 30px;
-  margin: 20px 20px 0 20px;
-  padding: 40px 20px 0 20px;
+/* ==========================================================================
+   UTILITY — VISUALLY HIDDEN (single source of truth)
+   ========================================================================== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
   overflow: hidden;
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.hero .container {
->>>>>>> 331acb68485363ff100d3f515980b609782decdc
-  display: flex;
-  flex-direction: column;
-}
-
-.hero h1 {
-  font-family: var(--main-font);
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 44px;
-  letter-spacing: -0.04em;
-  color: var(--primary-text-color);
-  margin: 0 0 20px 0;
-}
-
-.hero h1 .highlight {
-  font-weight: 400;
-  font-style: italic;
-  color: var(--accent-color);
-}
-
-.hero p {
-  font-family: var(--main-font);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -0.02em;
-  color: var(--primary-text-color);
-  margin: 0;
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.students-block {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.students-left {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.avatars {
-  display: flex;
-  align-items: center;
-}
-
-.avatars img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--black-soft);
-  object-fit: cover;
-}
-
-.avatars img:not(:first-child) {
-  margin-left: -12px;
-}
-
-.students-link {
-  font-family: var(--main-font);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: var(--primary-text-color);
-  text-decoration: none;
-  display: block;
-  width: auto;
-  letter-spacing: -0.04em;
-  margin-top: 4px;
-}
-
-.reviews {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  height: 44px;
-}
-
-.star {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.star img {
-  width: 20px;
-  height: 20px;
-}
-
-.review-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-}
-
-.review-text p:first-child {
-  font-family: var(--main-font);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: var(--primary-text-color);
-  margin: 0;
-}
-
-.review-text .count {
-  font-family: var(--main-font);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 18px;
-  color: var(--primary-text-color);
-  margin: 0;
-}
-
-<<<<<<< HEAD
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-.btn-primary {
-  font-family: var(--main-font);
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.55;
-  text-transform: uppercase;
-=======
-.hero-image-container {
-  margin-top: 31px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image-container img {
-  width: 259px;
-  height: 314px;
-  object-fit: cover;
-}
-
-@media (min-width: 768px) {
-  .hero {
-    padding: 64px 32px 0 32px;
-    margin: 40px 32px 0 32px;
-  }
-
-  .hero h1 {
-    font-size: 60px;
-    line-height: 64px;
-  }
-
-  .avatars img {
-    width: 54px;
-    height: 54px;
-  }
-
-  .avatars img:not(:first-child) {
-    margin-left: -16px;
-  }
-
-  .students-left {
-    gap: 8px;
-  }
-
-  .star {
-    width: 50px;
-    height: 50px;
-  }
-
-  .review-text {
-    gap: 8px;
-  }
-
-  .hero-image-container img {
-    width: 393px;
-    height: 434px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero {
-    max-width: 1080px;
-    height: 600px;
-    margin: 40px auto 0 auto;
-    padding: 0;
-  }
-
-  .hero .container {
-    height: 100%;
-    padding: 0 0 0 100px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .hero-content {
-    max-width: 418px;
-    width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 64px;
-    line-height: 68px;
-    margin-bottom: 20px;
-  }
-
-  .hero p {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .students-block {
-    gap: 40px;
-    margin-top: 60px;
-  }
-
-  .hero-image-container {
-    margin: 0;
-    height: 100%;
-    align-items: flex-end;
-  }
-
-  .hero-image-container img {
-    width: 397px;
-    height: 520px;
-    border-radius: 0;
-  }
->>>>>>> 331acb68485363ff100d3f515980b609782decdc
 }

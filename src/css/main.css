@@ -1,15 +1,13 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
+/* 1. Third-party reset / normalize */
+@import 'modern-normalize';
+
+/* 2. Project base (variables, global typography, utilities) */
 @import url('./base.css');
+
+/* 3. Layout helpers */
 @import url('./container.css');
 
-/* Sections style */
+/* 4. Sections — ordered top → bottom */
 @import url('./header.css');
 @import url('./hero.css');
 @import url('./advertisement.css');

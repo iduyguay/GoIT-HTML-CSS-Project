@@ -1,10 +1,8 @@
 .our-courses {
-  background-color: #121212;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  background-color: var(--background-color);
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-
-/* HEADER */
 
 .our-courses-header {
   margin-bottom: 40px;
@@ -16,13 +14,14 @@
   font-weight: 500;
   font-size: 28px;
   line-height: 32px;
+  /* Figma mobile: ls=-1.12px at 28px = -0.04em */
   letter-spacing: -0.04em;
 
-  color: #fff;
+  color: var(--white);
 }
 
 .our-courses-span {
-  color: #bea69e;
+  color: var(--accent-color);
 }
 
 .our-courses-header-text {
@@ -33,39 +32,69 @@
   line-height: 18px;
   letter-spacing: -0.02em;
 
-  color: #fff;
+  color: var(--white);
 }
-
-/* LIST */
 
 .our-courses-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
 
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* CARD */
+/* Custom scrollbar matching Figma's dark theme */
+.our-courses-list::-webkit-scrollbar {
+  height: 6px;
+}
+.our-courses-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.our-courses-list::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
 
 .our-courses-item {
-  width: 335px;
+  flex: 0 0 100%;
+  max-width: 335px;
   height: 398px;
+  scroll-snap-align: start;
 
   display: flex;
   flex-direction: column;
 
   padding: 28px;
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
 
-  background: linear-gradient(180deg, #060707 0%, #1d1d1d 100%);
+  /* Base gradient overlay + background image for cards */
+  background-size: cover;
+  background-position: center;
+  background-color: #1c1c1c; /* Fallback */
 }
 
-/* TOP */
+/* Individual course background mapping */
+.our-courses-item:nth-child(1) {
+  background-image: linear-gradient(180deg, rgba(6, 7, 7, 0) 0%, #1c1c1c 100%), url('../images/course-1.webp');
+}
+
+.our-courses-item:nth-child(2) {
+  background-image: linear-gradient(180deg, rgba(6, 7, 7, 0) 0%, #1c1c1c 100%), url('../images/course-2.webp');
+}
+
+.our-courses-item:nth-child(3) {
+  background-image: linear-gradient(180deg, rgba(6, 7, 7, 0) 0%, #1c1c1c 100%), url('../images/course-3.webp');
+}
 
 .our-courses-item-top {
   display: flex;
@@ -84,8 +113,6 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-/* LINK */
-
 .our-courses-link {
   display: flex;
   justify-content: center;
@@ -101,8 +128,6 @@
 
   transition: background-color 250ms ease;
 }
-
-/* ICON */
 
 .our-courses-icon {
   width: 32px;
@@ -124,8 +149,6 @@
   stroke: #121212;
 }
 
-/* TITLE */
-
 .our-courses-item-title {
   width: 279px;
 
@@ -136,8 +159,6 @@
 
   color: #fff;
 }
-
-/* TEXT */
 
 .our-courses-item-text {
   width: 279px;
@@ -152,12 +173,10 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* TABLET */
-
 @media screen and (min-width: 768px) {
   .our-courses {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   .our-courses-header {
@@ -170,18 +189,30 @@
 
   .our-courses-title {
     margin-bottom: 0;
+    /* Figma tablet: 48px/54px ls=-1.92 → -0.04em */
     font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -0.04em;
   }
 
   .our-courses-header-text {
     max-width: 381px;
+    /* Figma tablet: 16px/20px ls=-0.32 → -0.02em */
     font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
   }
 
   .our-courses-list {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+  
+  .our-courses-list::-webkit-scrollbar {
+    display: none;
   }
 
   .our-courses-item {
@@ -201,15 +232,17 @@
 
   .our-courses-item-text {
     width: 278px;
+    /* Figma tablet card text: 16px/20px ls=-0.32 → -0.02em */
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
   }
 }
 
-/* DESKTOP */
-
 @media only screen and (min-width: 1280px) {
   .our-courses {
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
   .our-courses-header {
@@ -218,13 +251,18 @@
 
   .our-courses-title {
     margin-bottom: 0;
-
+    /* Figma desktop: 48px/54px ls=-1.92 → -0.04em */
     font-size: 48px;
     line-height: 54px;
+    letter-spacing: -0.04em;
   }
 
   .our-courses-header-text {
-    max-width: 565px;
+    max-width: 405px;
+    /* Figma desktop: 16px/20px ls=-0.32 → -0.02em */
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
   }
 
   .our-courses-list {
@@ -250,6 +288,9 @@
 
   .our-courses-item-text {
     width: 283px;
+    /* Figma desktop card text: 16px/20px ls=-0.32 → -0.02em */
     font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
   }
 }
