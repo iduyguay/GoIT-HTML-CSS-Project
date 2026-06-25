@@ -15,7 +15,6 @@
 .sign-up-title {
   margin: 0 0 20px;
   font-family: var(--main-font);
-  /* Figma mobile: 28px/32px ls=-1.12 → -0.04em */
   font-size: 28px;
   line-height: 32px;
   font-weight: 500;
@@ -32,7 +31,7 @@
   margin: 0 0 41px;
   font-family: var(--main-font);
   font-size: 14px;
-  line-height: 1.29;
+  line-height: 18px;
   color: var(--primary-text-color);
 }
 
@@ -57,7 +56,7 @@
   color: var(--primary-text-color);
   font-family: var(--main-font);
   font-size: 14px;
-  line-height: 1.29;
+  line-height: 18px;
   letter-spacing: -0.02em;
   transition: border-color 250ms ease;
 }
@@ -94,7 +93,6 @@
   background-color: var(--white);
   color: var(--black);
   font-family: var(--main-font);
-  /* Figma mobile button: 16px/20px weight 700 */
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
@@ -112,7 +110,6 @@
 .sign-up-note {
   max-width: 335px;
   margin: 0;
-  /* Figma: privacy note uses Plus Jakarta Sans font */
   font-family: 'Plus Jakarta Sans', var(--main-font), sans-serif;
   font-size: 12px;
   line-height: 16px;
@@ -138,7 +135,6 @@
   }
 
   .sign-up-title {
-    /* Figma tablet/desktop: 48px/54px ls=-1.92 → -0.04em */
     font-size: 48px;
     line-height: 54px;
     letter-spacing: -0.04em;
@@ -147,7 +143,6 @@
   .sign-up-text {
     max-width: 480px;
     margin-bottom: 40px;
-    /* Figma tablet: 16px/20px ls=-0.32 → -0.02em */
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.02em;
@@ -160,26 +155,24 @@
   .sign-up-input {
     height: 60px;
     font-size: 16px;
-    line-height: 1.25;
+    line-height: 20px;
   }
 
   .sign-up-textarea {
     height: 120px;
     font-size: 16px;
-    line-height: 1.25;
+    line-height: 20px;
   }
 
   .sign-up-button {
     min-height: 60px;
     margin-top: 26px;
-    /* Figma tablet button: 18px/28px weight 700 */
     font-size: 18px;
     line-height: 28px;
   }
 
   .sign-up-note {
     max-width: 480px;
-    /* Figma tablet: Plus Jakarta Sans 14px/18px */
     font-size: 14px;
     line-height: 18px;
   }

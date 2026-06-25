@@ -38,7 +38,7 @@ export default defineConfig(({ command }) => {
       emptyOutDir: true,
     },
     plugins: [
-      injectHTML(),
+      injectHTML({ tagName: 'embed' }),
       FullReload(['./src/**/**.html']),
       SortCss({
         sort: 'mobile-first',

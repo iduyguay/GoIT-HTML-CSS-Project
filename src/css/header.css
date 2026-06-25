@@ -39,6 +39,12 @@
   display: none;
 }
 
+@media screen and (max-width: 1279px) {
+  .header-nav {
+    display: none !important;
+  }
+}
+
 .header-signup {
   display: none;
 }
@@ -111,11 +117,13 @@
   }
 
   .header-container {
+    justify-content: space-between;
     gap: 20px;
   }
 
   .header-wrapper {
-    max-width: 822px;
+    width: 822px;
+    height: 60px;
     padding-left: 50px;
     padding-right: 50px;
   }

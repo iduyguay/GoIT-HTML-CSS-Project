@@ -8,9 +8,11 @@
 
 .marquee-content {
   display: flex;
-  gap: 32px;
   white-space: nowrap;
-  animation: scrollText 15s linear infinite;
+  /* Double the animation time for smoother speed across 4 items */
+  animation: scrollText 20s linear infinite;
+  /* Will-change for smoother animation */
+  will-change: transform;
 }
 
 .marquee-content .marquee-text {
@@ -20,9 +22,9 @@
   line-height: 32px;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  /* Figma: fill #bea69e on all viewports */
   color: var(--accent-color);
   margin: 0;
+  margin-right: 32px;
 }
 
 @keyframes scrollText {
@@ -35,24 +37,22 @@
 }
 
 @media (min-width: 768px) {
-  .marquee-content {
-    gap: 48px;
+  .advertising {
+    padding: 24px 0;
   }
 
   .marquee-content .marquee-text {
     font-size: 40px;
     line-height: 50px;
     letter-spacing: -0.02em;
+    margin-right: 48px;
   }
 }
 
 @media (min-width: 1280px) {
   .advertising {
     margin-top: 174px;
-  }
-
-  .marquee-content {
-    gap: 64px;
+    padding: 24px 0;
   }
 
   .marquee-content .marquee-text {
@@ -60,5 +60,6 @@
     font-size: 59px;
     line-height: 64px;
     letter-spacing: -0.02em;
+    margin-right: 64px;
   }
 }

@@ -1,8 +1,4 @@
-/* ==========================================================================
-   CSS CUSTOM PROPERTIES
-   ========================================================================== */
 :root {
-  /* Palette */
   --black: #121212;
   --black-soft: #1d1d1d;
   --black-gradient: linear-gradient(180deg, #060707 0%, #1d1d1d 100%);
@@ -10,33 +6,23 @@
   --accent-color: #bea69e;
   --white: #ffffff;
 
-  /* Semantic aliases */
   --background-color: #121212;
   --primary-text-color: #ffffff;
   --border-color: rgba(255, 255, 255, 0.2);
   --text-muted: rgba(255, 255, 255, 0.5);
   --grid-color: rgba(255, 255, 255, 0.05);
 
-  /* Typography */
   --main-font: 'DM Sans', sans-serif;
 }
 
-/* ==========================================================================
-   GLOBAL BASE STYLES
-   ========================================================================== */
 body {
   background-color: var(--background-color);
   color: var(--primary-text-color);
   font-family: var(--main-font);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==========================================================================
-   UTILITY — VISUALLY HIDDEN (single source of truth)
-   ========================================================================== */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -46,6 +32,5 @@ body {
   padding: 0;
   white-space: nowrap;
   clip-path: inset(100%);
-  clip: rect(0 0 0 0);
   overflow: hidden;
 }
