@@ -1,17 +1,9 @@
-/* ============================================================
-   REVIEWS SECTION — Figma 1280px exact metrics
-   Section: y=3011 h=320
-   Title: h=54, gap to cards=50px
-   Cards: y=3115 h=216 w=530 each (two cards side by side, gap=20px)
-   Section gap below reviews to footer: 150px (handled by section margin/padding)
-   ============================================================ */
-
 .reviews {
-  padding: 80px 0 50px;
+  padding: 40px 0 50px;
 }
 
 .reviews-title {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   font-size: 28px;
   line-height: 32px;
   font-weight: 500;
@@ -21,38 +13,26 @@
 
 .reviews-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
+
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   list-style: none;
 }
 
-/* Custom scrollbar matching Figma's dark theme */
-.reviews-list::-webkit-scrollbar {
-  height: 6px;
+.reviews-item:nth-child(n+2) {
+  display: none !important;
 }
-.reviews-list::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-}
-.reviews-list::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 10px;
-}
+
+
 
 .reviews-item {
   display: flex;
-  flex: 0 0 100%;
+  width: 100%;
   max-width: 335px;
-  scroll-snap-align: center;
   min-height: 244px;
-  margin: 0 auto;
   padding: 20px;
   border: 1px solid var(--border-color);
   border-radius: 12px;
@@ -61,9 +41,7 @@
   gap: 20px;
 }
 
-.reviews-item:first-child {
-  /* Legacy rule removed */
-}
+
 
 .reviews-card-top {
   display: flex;
@@ -124,6 +102,12 @@
   color: rgba(255, 255, 255, 0.2) !important;
 }
 
+.reviews-star-icon--dimmed {
+  opacity: 0.2 !important;
+  fill-opacity: 0.2 !important;
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
 .reviews-text {
   margin: 0;
   font-size: 14px;
@@ -132,10 +116,11 @@
   color: var(--primary-text-color);
 }
 
-/* ====== TABLET (768px) ====== */
+
+
 @media screen and (min-width: 768px) {
   .reviews {
-    padding: 100px 0 50px;
+    padding: 50px 0 50px;
   }
 
   .reviews-title {
@@ -146,22 +131,19 @@
   }
 
   .reviews-list {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: visible;
-    padding-bottom: 0;
+    gap: 24px;
   }
-  
-  .reviews-list::-webkit-scrollbar {
-    display: none;
+
+  .reviews-star-icon {
+    width: 20px;
+    height: 20px;
   }
 
   .reviews-item {
-    width: 100%;
+    width: 640px;
     max-width: 640px;
-    height: auto;
     min-height: 196px;
-    padding: 32px;
+    padding: 20px;
   }
 
   .reviews-card-top {
@@ -178,12 +160,9 @@
   }
 }
 
-/* ====== DESKTOP (1280px) ====== */
-/* Figma: section h=320, padding-top≈50px padding-bottom≈54px
-   Reviews y=3011, bottom=3331. Footer y=3481. Gap=150px between sections. */
 @media screen and (min-width: 1280px) {
   .reviews {
-    padding: 150px 0 54px;
+    padding: 75px 0 54px;
   }
 
   .reviews-title {
@@ -198,6 +177,9 @@
     gap: 20px;
   }
 
+  .reviews-item:nth-child(n+2) {
+    display: flex !important;
+  }
   .reviews-item {
     display: flex;
     flex: 1 1 calc((100% - 20px) / 2);

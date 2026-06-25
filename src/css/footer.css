@@ -1,33 +1,12 @@
-/* ============================================================
-   FOOTER — Figma 1280px exact metrics
-   Footer: y=3481, h=331, w=1280
-   Container inner w=1080 (padding 100px each side)
-   
-   Layout (relative to container left edge=0):
-   Logo:             rel_x=0,   rel_y=50, w=123, h=16
-   Contacts list:    rel_x=0,   rel_y=91, w=287, h=46
-   Block (socials+menu): rel_x=427, rel_y=50, w=224, h=170 (HORIZONTAL gap=50)
-     - social networks: w=77, VERTICAL gap=20
-     - menu: w=97, VERTICAL gap=20
-   Email input:      rel_x=786, rel_y=50, w=216, h=60
-   CTA Go button:    rel_x=1018, rel_y=50, w=60, h=60
-   Privacy+Copyright row: rel_y=270
-
-   Gap between Reviews (bottom=3331) and Footer (y=3481) = 150px
-   This is encoded as margin-top: 150px on footer OR padding-top: 150px.
-   We implement as section-level margin-top on footer element.
-   ============================================================ */
-
 .footer {
   margin-top: 150px;
   background-color: var(--black);
-  padding: 50px 0 61px;
+  padding: 40px 0 20px;
   color: var(--primary-text-color);
   position: relative;
   overflow: hidden;
 }
 
-/* Decorative SVG background graphic — Figma node "Graphic" extends beyond footer */
 .footer::before {
   content: '';
   position: absolute;
@@ -52,7 +31,6 @@
   gap: 40px;
 }
 
-/* ---- Group 1: Logo + contacts ---- */
 .footer-logo {
   display: flex;
   flex-direction: column;
@@ -101,8 +79,6 @@
   color: var(--accent-color);
 }
 
-/* ---- Group 2: Socials + Nav links side by side ---- */
-/* Figma: HORIZONTAL itemSpacing=50 between social networks col and menu col */
 .footer-links-wrapper {
   display: flex;
   flex-direction: row;
@@ -116,7 +92,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Figma itemSpacing=20 within each column */
+  gap: 20px;
   font-size: 14px;
   line-height: 18px;
   color: var(--primary-text-color);
@@ -136,12 +112,12 @@
   color: var(--accent-color);
 }
 
-/* ---- Group 3: Email subscription ---- */
 .footer-subscribe {
   display: flex;
   flex-direction: column;
   gap: 0;
   width: 100%;
+  margin-top: 35px;
 }
 
 .footer-form {
@@ -152,7 +128,6 @@
   width: 100%;
 }
 
-/* Figma: input w=216 h=60, white bg */
 .footer-input {
   flex-grow: 1;
   min-width: 0;
@@ -173,7 +148,6 @@
   font-size: 16px;
 }
 
-/* Figma: CTA button w=60 h=60 bg=#1d1d1d */
 .footer-submit-btn {
   flex-shrink: 0;
   width: 60px;
@@ -199,13 +173,13 @@
   border-color: var(--accent-color);
 }
 
-/* ---- Bottom row: Privacy + Copyright ---- */
 .footer-bottom {
   display: flex;
   flex-direction: column;
   gap: 12px;
   border-top: 1px solid var(--border-color);
   padding-top: 20px;
+  margin-top: 20px;
 }
 
 .footer-bottom-links {
@@ -228,11 +202,10 @@ a.footer-text:focus {
   color: var(--accent-color);
 }
 
-/* ====== TABLET (768px) ====== */
 @media screen and (min-width: 768px) {
   .footer {
     margin-top: 100px;
-    padding: 60px 0 40px;
+    padding: 50px 0 25px;
   }
 
   .footer-top {
@@ -254,7 +227,12 @@ a.footer-text:focus {
 
   .footer-subscribe {
     flex-shrink: 0;
-    width: 284px;
+    width: 292px;
+    margin-top: 0;
+  }
+
+  .footer-form {
+    gap: 16px;
   }
 
   .footer-bottom {
@@ -263,7 +241,7 @@ a.footer-text:focus {
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
-    margin-top: 10px;
+    margin-top: 54px;
   }
 
   .footer-bottom-links {
@@ -272,13 +250,10 @@ a.footer-text:focus {
   }
 }
 
-/* ====== DESKTOP (1280px) ====== */
-/* Figma: all groups in one horizontal row */
-/* Logo group left, block (socials+nav) center, subscribe right */
 @media screen and (min-width: 1280px) {
   .footer {
     margin-top: 150px;
-    padding: 50px 0 61px;
+    padding: 50px 0 25px;
   }
 
   .footer-top {
@@ -289,25 +264,26 @@ a.footer-text:focus {
     gap: 0;
   }
 
-  /* Logo group: left, rel_x=0 */
   .footer-logo {
     flex-shrink: 0;
     width: 287px;
     gap: 25px;
   }
 
-  /* Navigation block: center, rel_x=427, HORIZONTAL gap=50 between sub-cols */
   .footer-links-wrapper {
     flex-shrink: 0;
     gap: 50px;
     align-items: flex-start;
-    /* margin-left is handled by space-between */
   }
 
-  /* Subscribe: right, w=276 (216+60 input+button) */
   .footer-subscribe {
     flex-shrink: 0;
     width: 284px;
+    margin-top: 0;
+  }
+
+  .footer-form {
+    gap: 16px;
   }
 
   .footer-bottom {
@@ -315,7 +291,7 @@ a.footer-text:focus {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 129px; /* Figma: bottom row at rel_y=270, logo at rel_y=50, so bottom is at 270-50-gap */
+    margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid var(--border-color);
   }

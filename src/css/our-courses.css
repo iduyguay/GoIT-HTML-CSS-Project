@@ -37,37 +37,19 @@
 
 .our-courses-list {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
+  align-items: center;
 
   list-style: none;
   margin: 0;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Custom scrollbar matching Figma's dark theme */
-.our-courses-list::-webkit-scrollbar {
-  height: 6px;
-}
-.our-courses-list::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-}
-.our-courses-list::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 10px;
+  padding: 0;
 }
 
 .our-courses-item {
-  flex: 0 0 100%;
+  width: 100%;
   max-width: 335px;
   height: 398px;
-  scroll-snap-align: start;
 
   display: flex;
   flex-direction: column;
@@ -207,12 +189,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-    overflow-x: visible;
-    padding-bottom: 0;
-  }
-  
-  .our-courses-list::-webkit-scrollbar {
-    display: none;
   }
 
   .our-courses-item {
