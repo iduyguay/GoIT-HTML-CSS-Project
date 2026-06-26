@@ -38,6 +38,7 @@
 
 @media (min-width: 768px) {
   .advertising {
+    margin-top: 100px;
     padding: 24px 0;
   }
 
@@ -51,7 +52,7 @@
 
 @media (min-width: 1280px) {
   .advertising {
-    margin-top: 174px;
+    margin-top: 150px;
     padding: 24px 0;
   }
 

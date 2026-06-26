@@ -1,7 +1,7 @@
 .our-courses {
   background-color: var(--background-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 0;
 }
 
 .our-courses-header {
@@ -157,8 +157,7 @@
 
 @media screen and (min-width: 768px) {
   .our-courses {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 100px;
   }
 
   .our-courses-header {
@@ -217,8 +216,7 @@
 
 @media only screen and (min-width: 1280px) {
   .our-courses {
-    padding-top: 75px;
-    padding-bottom: 75px;
+    padding-top: 150px;
   }
 
   .our-courses-header {

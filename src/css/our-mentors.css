@@ -1,5 +1,5 @@
 .our-mentors {
-  padding: 80px 0;
+  padding: 80px 0 0;
   background-color: var(--background-color);
 }
 
@@ -64,7 +64,7 @@
 
 @media only screen and (min-width: 768px) {
   .our-mentors {
-    padding: 100px 0;
+    padding-top: 100px;
   }
 
   .our-mentors-title {
@@ -97,7 +97,7 @@
 
 @media only screen and (min-width: 1280px) {
   .our-mentors {
-    padding: 150px 0;
+    padding-top: 150px;
   }
 
   .our-mentors-title {
